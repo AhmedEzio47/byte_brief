@@ -1,0 +1,13 @@
+{
+  "create_bases": true,
+  "use_case": "use case",
+  "failure": "failure",
+  "provider_status": "provider status",
+  "base_state": "base state",
+  "json_data": {
+    "id": 1,
+    "name": "Ahmed",
+    "icon": "assets/categories/1.png"
+  },
+  "state_management": "bloc"
+}
