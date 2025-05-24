@@ -1,15 +1,17 @@
+import 'package:byte_brief/data/data_sources/asset_reader.dart';
 import 'package:byte_brief/firebase_options.dart';
 import 'package:firebase_ai/firebase_ai.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 abstract interface class GeminiService {
-  Future<FirebaseApp> _firebaseApp();
-  Future<GenerativeModel> _geminiModel();
   Future<void> init();
   Future<void> sendMessage(String message);
 }
 
 class GeminiServiceImpl implements GeminiService {
+  GeminiServiceImpl({required this.assetReader});
+  final AssetReader assetReader;
+
   GenerativeModel? _model;
 
   @override
@@ -18,15 +20,14 @@ class GeminiServiceImpl implements GeminiService {
     _model = await _geminiModel();
   }
 
-  @override
   Future<FirebaseApp> _firebaseApp() =>
       Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  @override
   Future<GenerativeModel> _geminiModel() async {
+    final instructions = await assetReader.readAsset('prompt.md');
     final model = FirebaseAI.googleAI().generativeModel(
-      model: 'gemini-2.0-flash',
-    );
+        model: 'gemini-2.0-flash',
+        systemInstruction: Content.system(instructions));
     return model;
   }
 
