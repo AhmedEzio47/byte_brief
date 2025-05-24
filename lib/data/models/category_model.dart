@@ -1,3 +1,5 @@
+import 'package:byte_brief/core/mappers/model_to_entity_mapper.dart';
+
 import '../../index.dart';
 
 class CategoryModel extends CategoryEntity {

@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:myapp/data/data_sources/hive_data_source.dart';
-import '../../index.dart';
+
 import '../../../../core/failure.dart';
+import '../../data_sources/hive_data_source.dart';
+import '../../index.dart';
 
 class CategoriesRepoImpl implements CategoriesRepo {
   const CategoriesRepoImpl({required this.dataSource});
@@ -16,7 +17,7 @@ class CategoriesRepoImpl implements CategoriesRepo {
     ];
 
     return Right(
-      categories?.map((e) => CategoryModel.fromJson(e)).toList() ?? [],
+      categories.map((e) => CategoryModel.fromJson(e)).toList(),
     );
   }
 

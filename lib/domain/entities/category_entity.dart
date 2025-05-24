@@ -1,4 +1,5 @@
-import 'package:objectbox/objectbox.dart';
+import 'package:byte_brief/core/mappers/entity_to_model_mapper.dart';
+import 'package:byte_brief/data/index.dart';
 
 @Entity()
 class CategoryEntity {

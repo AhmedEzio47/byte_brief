@@ -1,6 +1,7 @@
-import 'package:myapp/core/di/di.dart';
-import 'package:myapp/data/data_sources/hive_data_source.dart';
-import 'package:myapp/index.dart';
+import '../../data/data_sources/hive_data_source.dart';
+import '../../data/repos/categories/categories_repo.dart';
+import '../../data/repos/categories/categories_repo_impl.dart';
+import 'di.dart';
 
 void injectRepos() {
   di.registerFactory<CategoriesRepo>(

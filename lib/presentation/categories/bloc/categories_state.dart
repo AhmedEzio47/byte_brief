@@ -1,6 +1,6 @@
+import '../../../../core/base_state.dart';
 import '../../../../core/failure.dart';
 import '../../../../core/provider_status.dart';
-import '../../../../core/base_state.dart';
 import '../../../index.dart';
 
 final class CategoriesState extends BaseState {
@@ -16,9 +16,10 @@ final class CategoriesState extends BaseState {
     ProviderStatus? status,
     Failure? failure,
     List<CategoryEntity>? categories,
-  }) => CategoriesState(
-    status: status ?? this.status,
-    failure: failure ?? this.failure,
-    categories: categories ?? this.categories,
-  );
+  }) =>
+      CategoriesState(
+        status: status ?? this.status,
+        failure: failure ?? this.failure,
+        categories: categories ?? this.categories,
+      );
 }

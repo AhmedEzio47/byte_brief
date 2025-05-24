@@ -1,5 +1,5 @@
-import 'package:myapp/core/di/di.dart';
-import 'package:myapp/presentation/categories/bloc/categories_bloc.dart';
+import '../../presentation/categories/bloc/categories_bloc.dart';
+import 'di.dart';
 
 void injectBlocs() {
   di.registerFactory<CategoriesBloc>(

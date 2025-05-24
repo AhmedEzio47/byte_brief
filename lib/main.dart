@@ -1,6 +1,7 @@
+import 'package:byte_brief/presentation/categories/categories_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/core/di/di.dart';
-import 'package:myapp/presentation/index.dart';
+
+import 'core/di/di.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

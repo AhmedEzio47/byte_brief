@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import '../../../index.dart';
-import '../../../../core/use_case.dart';
+
 import '../../../../core/failure.dart';
+import '../../../../core/use_case.dart';
+import '../../../index.dart';
 
 class GetCategoriesUseCase implements UseCase<List<CategoryEntity>, NoParams> {
   const GetCategoriesUseCase(this.repo);

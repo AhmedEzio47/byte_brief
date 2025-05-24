@@ -1,5 +1,8 @@
-import 'package:myapp/core/di/di.dart';
-import 'package:myapp/domain/use_cases/index.dart';
+import '../../domain/use_cases/categories/create_categories_use_case.dart';
+import '../../domain/use_cases/categories/delete_categories_use_case.dart';
+import '../../domain/use_cases/categories/edit_categories_use_case.dart';
+import '../../domain/use_cases/categories/get_categories_use_case.dart';
+import 'di.dart';
 
 void injectUseCases() {
   di.registerFactory<GetCategoriesUseCase>(() => GetCategoriesUseCase(di()));
