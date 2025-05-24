@@ -1,5 +1,3 @@
-import 'package:byte_brief/core/di/di.dart';
-import 'package:byte_brief/core/services/gemini_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,9 +10,7 @@ class CategoriesContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          di<GeminiService>().sendMessage('Hi Gemini, how are you today?');
-        },
+        onPressed: () {},
         child: Icon(Icons.add),
       ),
       body: BlocBuilder<CategoriesBloc, CategoriesState>(

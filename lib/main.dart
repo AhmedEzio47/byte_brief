@@ -1,5 +1,7 @@
-import 'package:byte_brief/presentation/categories/categories_screen.dart';
+import 'package:byte_brief/index.dart';
+import 'package:byte_brief/presentation/articles/articles_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/di/di.dart';
 
@@ -16,11 +18,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Byte Brief',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: CategoriesScreen(),
+      home: MultiBlocProvider(providers: [
+        BlocProvider(
+            lazy: false,
+            create: (context) =>
+                di<CategoriesBloc>()..add(GetCategoriesEvent())),
+      ], child: ArticlesScreen()),
     );
   }
 }
